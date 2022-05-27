@@ -1,6 +1,7 @@
 [
     {
         "name": "Twttr",
+        "description": "A theme inspired by the simplicity of the Twitter webapp.",
         "author": "Robijntje",
         "license": "Apache License 2.0",
         "url": "themes/twttr.css",
@@ -8,6 +9,7 @@
     },
     {
         "name": "GitHub",
+        "description": "A theme to make neopub look like a simplified GitHub profile.",
         "author": "Robijntje",
         "license": "Apache License 2.0",
         "url": "themes/github.css",
@@ -15,6 +17,7 @@
     },
     {
         "name": "Dark",
+        "description": "Minimal dark theme with light blue highlights.",
         "author": "Robijntje",
         "license": "Apache License 2.0",
         "url": "themes/dark.css",
@@ -22,6 +25,7 @@
     },
     {
         "name": "Minimal",
+        "description": "Most bare-bones version of the theme. Basically only includes the basic layout. Can be used to built your own theme.",
         "author": "Robijntje",
         "license": "Apache License 2.0",
         "url": "themes/minimal.css",
