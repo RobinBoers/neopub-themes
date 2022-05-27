@@ -22,7 +22,7 @@
             </header>
 
             <div class="w3-container">
-                <p>These are the available neopub themes at the moment. To download them click the big green button. You can install them in the <a href="https://github.com/RobinBoers/neoblog">neoblog</a> settings panel or by replacing <code>/assets/main.css</code>.</p>
+                <p>These are the available neopub themes at the moment. To download them click the big green button. You can install them in the <a href="https://github.com/RobinBoers/neoblog">neoblog</a> settings panel or by replacing manually <code>main.css</code>.</p>
             </div>
 
             <div class="themes"></div>
@@ -53,18 +53,19 @@
 
                     let themeDescription = document.createElement("p");
                     themeDescription.innerText = theme.description;
+                    themeContentContainer.appendChild(themeDescription);
 
                     let themeInfo = document.createElement("p");
 
                     let themeAuthorPrefix = document.createElement("strong");
                     themeAuthorPrefix.innerText = "Author:";
                     themeInfo.appendChild(themeAuthorPrefix);
-                    themeInfo.innerText += ` ${theme.author}<br>`;
+                    themeInfo.innerHTML += ` ${theme.author}<br>`;
 
                     let themeLicensePrefix = document.createElement("strong");
                     themeLicensePrefix.innerText = "License:";
                     themeInfo.appendChild(themeLicensePrefix);
-                    themeInfo.innerText += ` ${theme.license}`;
+                    themeInfo.innerHTML += ` ${theme.license}`;
 
                     let downloadButton = document.createElement("button");
                     downloadButton.innerText = "Download theme";
