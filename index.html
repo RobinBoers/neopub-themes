@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <title>neopub themes</title>
+    </head>
+
+    <body>
+        <div class="w3-main themes">
+            <header class="w3-container module-header">
+                <h2>
+                    <b><i class="fa fa-paint-brush"></i> Browse themes</b>
+                </h2>
+            </header>
+
+            <div class="w3-container">
+                <p>These are the available neopub themes at the moment. To download them click the big green button. You can install them in the <a href="https://github.com/RobinBoers/neoblog">neoblog</a> settings panel or by replacing <code>/assets/main.css</code>.</p>
+            </div>
+
+            <div class="themes">
+                <div class="theme">
+                    <img src="https://raw.githubusercontent.com/RobinBoers/neopub/master/screenshot.png" class="screenshot" />
+                    <div>
+                        <h3>Twttr</h3>
+                        <p>A theme inspired by the simplicity of the Twitter webapp.</p>
+                        <p>
+                            <strong>Author:</strong> Robijntje<br />
+                            <strong>License:</strong> Apache License 2.0
+                        </p>
+                        <button onclick="" class="button-primary">Install this theme</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            let themesListContainer = document.querySelector(".themes");
+
+            fetch("https://docs.geheimesite.nl/neopub-themes/themes.json")
+                .then((response) => response.json())
+                .then((json) => populateThemeList(json));
+
+            function populateThemeList(themes) {
+                themes.forEach((theme) => {
+                    let themeContainer = document.createElement("div");
+                    themeContainer.classList.add("theme");
+
+                    let screenshot = document.createElement("img");
+                    screenshot.src = `https://docs.geheimesite.nl/neopub-themes/${theme.screenshot}`;
+                    screenshot.classList.add("screenshot");
+                    themeContainer.appendChild(screenshot);
+
+                    let themeContentContainer = document.createElement("div");
+
+                    let themeTitle = document.createElement("h3");
+                    themeTitle.innerText = theme.name;
+                    themeContentContainer.appendChild(themeTitle);
+
+                    let themeDescription = document.createElement("p");
+                    themeDescription.innerText = theme.description;
+
+                    let themeInfo = document.createElement("p");
+
+                    let themeAuthorPrefix = document.createElement("strong");
+                    themeAuthorPrefix.innerText = "Author:";
+                    themeInfo.appendChild(themeAuthorPrefix);
+                    themeInfo.innerText += ` ${theme.author}<br>`;
+
+                    let themeLicensePrefix = document.createElement("strong");
+                    themeLicensePrefix.innerText = "License:";
+                    themeInfo.appendChild(themeLicensePrefix);
+                    themeInfo.innerText += ` ${theme.license}`;
+
+                    let downloadButton = document.createElement("button");
+                    downloadButton.innerText = "Download theme";
+                    downloadButton.classList.add("button-primary");
+                    downloadButton.onclick = () => {
+                        window.location = `https://docs.geheimesite.nl/neopub-themes/${theme.url}`;
+                    };
+
+                    themeContentContainer.appendChild(themeInfo);
+                    themeContentContainer.appendChild(downloadButton);
+                    themeContainer.appendChild(themeContentContainer);
+
+                    themesListContainer.appendChild(themeContainer);
+                });
+            }
+        </script>
+    </body>
+</html>
