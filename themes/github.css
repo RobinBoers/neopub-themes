@@ -1,0 +1,333 @@
+/** General **/
+
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: #f1f1f1;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+@media screen and (min-width: 1000px) {
+    body {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        display: grid;
+        grid-template-columns: 300px auto;
+        grid-template-rows: repeat(auto-fill, auto);
+    }
+}
+
+header {
+    grid-column: 1;
+}
+
+article {
+    grid-column: 2;
+}
+
+/* Header */
+
+header {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+header .u-photo {
+    width: 200px;
+    border: 2px solid rgba(27, 31, 36, 0.15);
+}
+
+.h-card > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.h-card h1 {
+    margin-bottom: 2px;
+}
+
+address.properties {
+    margin-bottom: 16px;
+    color: transparent;
+}
+
+address.properties a:first-child {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: #57606a;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Sidebar */
+
+.sidebar-section {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.sidebar-section:first-child {
+    margin-top: 15px;
+}
+
+.sidebar-section h3 {
+    margin-top: 0;
+}
+
+.sidebar-section p:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-section.about {
+    padding: 20px;
+}
+
+/* Menu */
+
+nav ul {
+    list-style: none;
+    padding-left: 18px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+/* Link styles */
+
+a {
+    text-decoration: none;
+    color: #4183c4;
+}
+a:hover:not(.no-underline),
+a:focus:not(.no-underline) {
+    text-decoration: underline;
+}
+a:active {
+    color: black;
+}
+
+/* Posts & comments */
+.h-entry,
+.comment {
+    padding: 11px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    border-radius: 11px;
+}
+
+.h-entry > div:last-child {
+    flex-grow: 1;
+}
+
+.h-entry p,
+.comment p {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+.e-content {
+    flex-grow: 1;
+}
+
+.u-photo,
+.comment-photo {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 1px solid rgba(27, 31, 36, 0.15);
+    border-radius: 50%;
+}
+
+.e-content .u-photo {
+    border-radius: 4px;
+}
+
+.u-photo {
+    width: 60px;
+}
+.comment-photo {
+    width: 30px;
+}
+
+/* Small text underneath post */
+.sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+time,
+.sub * {
+    font-size: 12px;
+    display: inline;
+    margin: 0;
+}
+
+/* Supertext (liked, repost, reply etc.) */
+.h-entry p.title,
+.comment p.title {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+/* Spacing between .sub and content */
+.h-entry > div,
+.comment > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Comment section */
+
+.comments {
+    padding: 0;
+    margin: 0;
+}
+
+.comment {
+    list-style: none;
+}
+
+.comment-section {
+    margin-top: 90px;
+}
+
+.comment-section form a,
+footer a {
+    font-weight: bold;
+}
+
+/* Forms */
+
+input,
+button {
+    padding: 6px;
+    font-size: 16px;
+    outline-offset: 1px;
+}
+
+input:active,
+input:not([type="submit"]):not([type="button"]):focus,
+button:active {
+    outline: 2px solid #b4d2ff;
+}
+
+input,
+button {
+    color: black;
+    border-radius: 0;
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+    cursor: pointer;
+}
+
+/* Images */
+
+.h-entry .e-content img {
+    max-width: 300px;
+    width: 100%;
+}
+
+/* Render sharp pixelart */
+.pixelart {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+/* Misc & utilities */
+
+.warning,
+.error,
+.msg {
+    padding: 7px;
+    margin-top: 10px;
+}
+
+.warning {
+    border: 1px solid rgb(184, 116, 0);
+    background-color: rgb(255, 210, 132);
+    color: rgb(73, 51, 12);
+}
+
+.error {
+    border: 1px solid rgb(184, 18, 0);
+    background-color: rgb(255, 148, 132);
+    color: rgb(73, 12, 12);
+}
+
+.error a {
+    color: rgb(230, 52, 52);
+}
+
+.get-your-own {
+    font-size: 22px;
+    text-underline-offset: 7px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.get-your-own:hover {
+    font-weight: 800;
+}
+
+/* Typography */
+
+h1 {
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+p {
+    color: rgba(0, 0, 0, 0.5);
+    margin: 10px 0 10px;
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 1.6em;
+}
+
+ul {
+    list-style: none;
+    margin: 25px 0;
+    padding: 0;
+}
+
+li {
+    font-weight: bold;
+    width: 1%;
+}

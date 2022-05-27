@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Twttr",
+        "author": "Robijntje",
+        "license": "Apache License 2.0",
+        "url": "themes/twttr.css",
+        "screenshot": "screenshots/twttr.png"
+    },
+    {
+        "name": "GitHub",
+        "author": "Robijntje",
+        "license": "Apache License 2.0",
+        "url": "themes/github.css",
+        "screenshot": "screenshots/github.png"
+    },
+    {
+        "name": "Dark",
+        "author": "Robijntje",
+        "license": "Apache License 2.0",
+        "url": "themes/dark.css",
+        "screenshot": "screenshots/dark.png"
+    },
+    {
+        "name": "Minimal",
+        "author": "Robijntje",
+        "license": "Apache License 2.0",
+        "url": "themes/minimal.css",
+        "screenshot": "screenshots/minimal.png"
+    }
+]
