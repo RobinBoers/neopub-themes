@@ -31,7 +31,7 @@
         <script>
             let themesListContainer = document.querySelector(".themes");
 
-            fetch("https://docs.geheimesite.nl/neopub-themes/themes.json")
+            fetch("https://neopublished.github.io/themes/themes.json")
                 .then((response) => response.json())
                 .then((json) => populateThemeList(json));
 
@@ -41,7 +41,7 @@
                     themeContainer.classList.add("theme");
 
                     let screenshot = document.createElement("img");
-                    screenshot.src = `https://docs.geheimesite.nl/neopub-themes/${theme.screenshot}`;
+                    screenshot.src = `https://neopublished.github.io/themes/${theme.screenshot}`;
                     screenshot.classList.add("screenshot");
                     themeContainer.appendChild(screenshot);
 
@@ -71,7 +71,7 @@
                     downloadButton.innerText = "Download theme";
                     downloadButton.classList.add("button-primary");
                     downloadButton.onclick = () => {
-                        window.location = `https://neologged.github.io/themes/${theme.url}`;
+                        window.location = `https://neopublished.github.io/themes/${theme.url}`;
                     };
 
                     themeContentContainer.appendChild(themeInfo);
